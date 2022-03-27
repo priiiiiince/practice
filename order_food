@@ -1,0 +1,103 @@
+all_food = {
+    'Burger' : {'[1]Beef':229,    '[2]Pork':159,    '[3]Chicken':119}
+    , 'Soup' : {'[1]Tomato': 119, '[2]Pumpkin':159, '[3]Tomyum': 189}}
+total_price = 0
+total_order = ''
+while True:
+    food_order = input('[B]urger, [S]oup what would you like? [E]nd: ').upper().strip()
+    if food_order == 'E':
+        break
+    if food_order == 'B':
+        print(all_food['Burger'])
+        food_order_meat = input('What meat would you like? [1], [2], [3] : ')
+        if food_order_meat == '1':
+            print('Beef burger')
+            while True:
+                try:
+                    how_many = int(input('How many would you like: '))
+                except ValueError:
+                    print("Put only number please")
+                    continue
+                else:
+                    break
+            price = (all_food['Burger']['[1]Beef'] * how_many)
+            print('{} Beef burger {} baht'.format(how_many, price))
+            total_price += (price)
+            total_order += f'{how_many} Beef burger \n'
+        if food_order_meat == '2':
+            print('Pork burger')
+            while True:
+                try:
+                    how_many = int(input('How many would you like: '))
+                except ValueError:
+                    print("Put only number please")
+                    continue
+                else:
+                    break
+            price = (all_food['Burger']['[2]Pork'] * how_many)
+            print('{} Pork burger {} baht'.format(how_many, price))
+            total_price += (price)
+            total_order += f'{how_many} Pork burger \n'
+        if food_order_meat == '3':
+            print('Chicken buger')
+            while True:
+                try:
+                    how_many = int(input('How many would you like: '))
+                except ValueError:
+                    print("Put only number please")
+                    continue
+                else:
+                    break
+            price = (all_food['Burger']['[3]Chicken'] * how_many)
+            print('{} Chicken burger {} baht'.format(how_many,price))
+            total_price += (price)
+            total_order += f'{how_many} Chicken burger \n'
+    if food_order == 'S':
+        print(all_food['Soup'])
+        food_order_soup = input('What soup would you like? [1], [2], [3] : ')
+        if food_order_soup == '1':
+            print('Tomato soup')
+            while True:
+                try:
+                    how_many = int(input('How many would you like: '))
+                except ValueError:
+                    print("Put only number please")
+                    continue
+                else:
+                    break
+            price = (all_food['Soup']['[1]Tomato'] * how_many)
+            print('{} Tomato soup {} baht'.format(how_many, price))
+            total_price += (price)
+            total_order += f'{how_many} Tomato soup \n'
+        if food_order_soup == '2':
+            print('Pumpkin soup')
+            while True:
+                try:
+                    how_many = int(input('How many would you like: '))
+                except ValueError:
+                    print("Put only number please")
+                    continue
+                else:
+                    break
+            price = (all_food['Soup']['[2]Pumpkin'] * how_many)
+            print('{} Pumpkin soup {} baht'.format(how_many, price))
+            total_price += (price)
+            total_order += f'{how_many} Pumpkin soup \n'
+        if food_order_soup == '3':
+            print('Tomyum soup')
+            while True:
+                try:
+                    how_many = int(input('How many would you like: '))
+                except ValueError:
+                    print("Put only number please")
+                    continue
+                else:
+                    break
+            price = (all_food['Soup']['[3]Tomyum'] * how_many)
+            print('{} Tomyum soup {} baht'.format(how_many, price))
+            total_price += (price)
+            total_order += f'{how_many} Tomyum soup \n'
+    else: continue
+print(f'Your order is: \n{total_order}')
+print('Total price : {} baht'.format(total_price))
+        
